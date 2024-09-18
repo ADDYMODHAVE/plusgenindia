@@ -1,0 +1,42 @@
+.scroll-container {
+  width: 100%; /* Full width */
+  overflow: hidden;
+  white-space: nowrap; /* Prevent line breaks */
+  position: relative;
+}
+
+/* Scroll Content */
+.scroll-content {
+  display: inline-block; /* Ensures content stays in one line */
+  animation: scrollLeft 15s ease-in-out infinite; /* Adjusted duration and easing */
+  position: relative;
+}
+
+/* Scroll Images */
+.scroll-content img {
+  width: 150px; /* Adjust the size of the images */
+  margin-right: 20px; /* Spacing between images */
+  display: inline-block;
+}
+
+/* Keyframes for Scroll with Pause */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(200%); /* Start fully off-screen to the right */
+  }
+  25% {
+    transform: translateX(150%); /* Move to the middle */
+  }
+  35% {
+    transform: translateX(100%); /* Pause in the middle */
+  }
+  60% {
+    transform: translateX(50); /* Move to the left side of the screen */
+  }
+  70% {
+    transform: translateX(0); /* Pause on the left side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move fully off-screen to the left */
+  }
+}

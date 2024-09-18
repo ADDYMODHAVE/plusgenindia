@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import Navbar from "./Components/Header";
+import Invitation from "./Components/Invitation";
+import ScrollingImages from "./Components/ScrollBar";
+import AboutUs from "./Components/AboutUs";
+import MedicalProducts from "./Components/MedicalProducts";
+import Services from "./Components/Services";
+import BannerAndCatalogue from "./Components/BannerAndCatlog";
+import TestimonialSection from "./Components/Testimonial";
+import Footer from "./Components/Footer";
+import ContactForm from "./Components/ContactForm";
+import { Container } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Container maxWidth="xl">
+        <Invitation />
+        <ScrollingImages />
+        <AboutUs />
+        <MedicalProducts />
+        <Services />
+        <BannerAndCatalogue />
+        <TestimonialSection />
+        <ContactForm />
+        <Footer />
+      </Container>
+    </>
   );
 }
 
