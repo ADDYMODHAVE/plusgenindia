@@ -17,17 +17,16 @@ function App() {
   return (
     <>
       <Navbar />
-      <Container maxWidth="xl">
-        <Invitation />
-        <ScrollingImages />
-        <AboutUs />
-        <MedicalProducts />
-        <Services />
-        <BannerAndCatalogue />
-        <TestimonialSection />
-        <ContactForm />
-        <Footer />
-      </Container>
+      <Invitation />
+      <ScrollingImages />
+      <AboutUs />
+      <MedicalProducts />
+      <Services />
+      <BannerAndCatalogue />
+      <TestimonialSection />
+      <ContactForm />
+      <Footer />
+
     </>
   );
 }

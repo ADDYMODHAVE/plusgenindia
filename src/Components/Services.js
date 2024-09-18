@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid, Card, CardContent, CardMedia } from "@mui/material";
+import { Container } from "@mui/material";
 
 const Services = () => {
   const services = [
@@ -34,46 +35,49 @@ const Services = () => {
   ];
 
   return (
-    <Box id="services" sx={{ maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
-      <Typography variant="h4" sx={{ fontSize: "1.8em", color: "#2d3748", marginBottom: "40px", textAlign: "center" }}>
-        We Offer Best Services
-      </Typography>
-      <Grid container spacing={3}>
-        {services.map((service, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card
-              sx={{
-                backgroundColor: "#ffffff",
-                padding: "20px",
-                borderRadius: "8px",
-                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                "&:hover": {
-                  transform: "translateY(-5px)",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                },
-              }}
-            >
-              <CardMedia
-                component="img"
-                image={service.imgSrc}
-                alt={service.title}
+    <Box id="services" sx={{ background: "#f5f6f8", }}>
+      <Container maxWidth="xl" style={{ paddingTop: "50px" }}>
+        <h1 className="about_line" style={{ color: "#37517e", textAlign: "center", marginBottom: "20px", fontSize: "32px", font: "bold", paddingBottom: "20px", position: "relative" }}>ALL CATEGORIES</h1>
+        <Typography variant="h4" sx={{ fontSize: "16px", color: "#444444", marginBottom: "40px", textAlign: "center" }}>
+          We Offer Best Services
+        </Typography>
+        <Grid container spacing={3} style={{ paddingBottom: "50px", }}>
+          {services.map((service, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index} style={{ paddingBottom: "50px", }}>
+              <Card
                 sx={{
-                  maxWidth: "40px",
-                  marginBottom: "20px",
+                  backgroundColor: "#ffffff",
+                  padding: "20px",
+                  boxShadow: "0px 5px 90px 0px rgba(0, 0, 0, 0.1)",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  height: "100%",
+                  "&:hover": {
+                    transform: "translateY(-10px)",
+                    fontFamily: '"Jost", sans-serif'
+                  },
                 }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontSize: "1.2em", color: "#2d3748", marginBottom: "10px" }}>
-                  {service.title}
-                </Typography>
-                <Typography sx={{ fontSize: "1em", color: "#4a5568" }}>{service.description}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+              >
+                <CardMedia
+                  component="img"
+                  image={service.imgSrc}
+                  alt={service.title}
+                  sx={{
+                    maxWidth: "40px",
+                    marginBottom: "20px",
+                  }}
+                />
+                <CardContent>
+                  <Typography variant="h6" sx={{ fontWeight: "700", fontSize: "1.2em", color: "#37517e", marginBottom: "10px" }}>
+                    {service.title}
+                  </Typography>
+                  <Typography sx={{ fontSize: "1em", color: "#4a5568" }}>{service.description}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box >
   );
 };
 

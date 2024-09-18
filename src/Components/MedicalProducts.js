@@ -1,68 +1,88 @@
-import React from "react";
-import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const MedicalProducts = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleAccordionChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+  const products = [
+    "Antibiotics",
+    "Anti Histamine/ Anti Allergic",
+    "Anti Diabetes",
+    "Cardiovascular",
+    "Anti Cancer",
+    "Erectile Dysfunction",
+    "Analgesic & NSAID’s",
+    "Anti Coagulants",
+    "Diuretic",
+    "Ointments/Creams & Gels",
+    "Anti Platelets",
+  ];
+
   return (
     <Box
       id="product"
       sx={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        padding: "20px",
+        padding: "40px",
         display: "flex",
         flexWrap: "wrap",
+        background: "#f5f6f8",
         justifyContent: "space-between",
       }}
     >
       <Box
         sx={{
           flex: 2,
-          minWidth: "300px",
+          maxWidth: { md: "100%", lg: "55%" },
+          minWidth: { xs: "300px", lg: "900px" }
         }}
       >
-        <Typography variant="h4" sx={{ color: "#2d3748", marginBottom: "10px" }}>
-          We Provide You Best Medical Products Our Area Of Focus
+        <Typography
+          variant="h4"
+          sx={{ color: "#37517e", marginBottom: "10px" }}
+        >
+          We Provide You Best Medical Products <strong> Our Area Of Focus</strong>
         </Typography>
         <Typography sx={{ marginBottom: "20px", color: "#4a5568" }}>
-          At PlusGen India Pvt Ltd., we specialise in several key therapeutic areas to ensure we provide the best medicine and medical products that meet the
-          diverse healthcare needs of patients:
+          At PlusGen India Pvt Ltd., we specialise in several key therapeutic
+          areas to ensure we provide the best medicine and medical products that
+          meet the diverse healthcare needs of patients:
         </Typography>
-        <List sx={{ padding: 0 }}>
-          {[
-            "Antibiotics",
-            "Anti Histamine/ Anti Allergic",
-            "Anti Diabetes",
-            "Cardiovascular",
-            "Anti Cancer",
-            "Erectile Dysfunction",
-            "Analgesic & NSAID’s",
-            "Anti Coagulants",
-            "Diuretic",
-            "Ointments/Creams & Gels",
-            "Anti Platelets",
-          ].map((item, index) => (
-            <ListItem
-              key={index}
-              sx={{
-                backgroundColor: "#ffffff",
-                margin: "5px 0",
-                padding: "10px",
-                borderRadius: "5px",
-                marginLeft: "20px",
-                alignItems: "center",
-                fontSize: "1em",
-                color: "#2b6cb0",
-                cursor: "pointer",
-                textAlign: "left",
-                "&:hover": {
-                  backgroundColor: "#f1f5f9",
-                },
-              }}
+
+        {products.map((item, index) => (
+          <Accordion
+            key={index}
+            expanded={expanded === index}
+            onChange={handleAccordionChange(index)}
+            sx={{ marginBottom: "20px" }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index}-content`}
+              id={`panel${index}-header`}
             >
-              <ListItemText primary={`${index + 1} ${item}`} sx={{ fontWeight: "bold" }} />
-            </ListItem>
-          ))}
-        </List>
+              <Typography sx={{ fontWeight: "bold", color: "#37517e" }}>
+                {`${index + 1}. ${item}`}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Details about {item}. This section can provide more information
+                about each product.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Box>
       <Box
         sx={{
@@ -71,6 +91,7 @@ const MedicalProducts = () => {
           justifyContent: "center",
           alignItems: "center",
           minWidth: "300px",
+          maxWidth: { md: "100%", lg: "55%" },
         }}
       >
         <img

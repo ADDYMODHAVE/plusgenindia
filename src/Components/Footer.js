@@ -5,33 +5,37 @@ import { Facebook, Instagram, YouTube, Twitter } from "@mui/icons-material";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#f8f9fa", pt: 6, pb: 3 }}>
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: "center", mb: 4 }}>
-          <Typography variant="h5" sx={{ fontWeight: "bold", mb: 1 }}>
-            Join Our Newsletter
-          </Typography>
-          <Typography variant="body1" sx={{ color: "#666", mb: 2 }}>
-            Subscribe to the PlusGen India Pvt. Ltd. newsletter for exclusive insights into our latest pharmaceutical innovations.
-          </Typography>
-          <TextField
-            variant="outlined"
-            placeholder="Enter your email"
-            size="small"
-            sx={{
-              width: { xs: "100%", sm: "400px" },
-              backgroundColor: "#fff",
-              borderRadius: 2,
-            }}
-            InputProps={{
-              endAdornment: (
-                <Button variant="contained" sx={{ borderRadius: 2, margin: "10px" }}>
-                  Subscribe
-                </Button>
-              ),
-            }}
-          />
-        </Box>
+    <>
+      <Box sx={{ backgroundColor: "#f8f9fa", paddingY: "50px" }}>
+        <Container maxWidth="sm">
+          <Box sx={{ textAlign: "center", mb: 4 }}>
+            <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: "8px", paddingBottom: "12px", color: "#37517e", fontSize: "24px" }}>
+              Join Our Newsletter
+            </Typography>
+            <Typography variant="body1" sx={{ fontSize: "14px", color: "#444444", marginBottom: "30px", }}>
+              Subscribe to the PlusGen India Pvt. Ltd. newsletter for exclusive insights into our latest pharmaceutical innovations.
+            </Typography>
+            <TextField
+              variant="outlined"
+              placeholder="Enter your email"
+              size="small"
+              sx={{
+                width: { xs: "100%", sm: "400px" },
+                backgroundColor: "#fff",
+                borderRadius: 2,
+              }}
+              InputProps={{
+                endAdornment: (
+                  <Button variant="contained" sx={{ borderRadius: 2, margin: "10px" }}>
+                    Subscribe
+                  </Button>
+                ),
+              }}
+            />
+          </Box>
+        </Container>
+      </Box>
+      <Container maxWidth="xl">
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="body1" sx={{ fontWeight: "bold", mb: 2 }}>
@@ -104,8 +108,8 @@ const Footer = () => {
             © Copyright <strong>PlusGen India</strong> All Rights Reserved
           </Typography>
         </Box>
-      </Container>
-    </Box>
+      </Container></>
+
   );
 };
 

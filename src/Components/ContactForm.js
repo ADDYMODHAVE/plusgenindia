@@ -8,9 +8,20 @@ const ContactForm = () => {
   return (
     <section id="contact">
       <Container sx={{ mt: 5 }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          CONTACT
-        </Typography>
+      <h1
+          className="about_line"
+          style={{
+            color: "#37517e",
+            textAlign: "center",
+            fontSize: "32px",
+            font: "bold",
+            paddingBottom: "20px",
+            position: "relative",
+            marginBottom: "20px",
+          }}
+        >
+CONTACT
+        </h1>
         <Typography align="center" gutterBottom>
           Please contact us on the below information or Want a call back? Simply leave your details, and we’ll get in touch ASAP.
         </Typography>

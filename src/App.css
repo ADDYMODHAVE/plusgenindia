@@ -1,3 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
 html {
   scroll-behavior: smooth;
+}
+* {
+  font-family: "Jost", sans-serif !important;
+  margin: 0;
+}
+.about_line::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: color-mix(in srgb, #444444, transparent 60%);
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  margin: auto;
+}
+.about_line::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #47b2e4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+.css-1qkil1h-MuiPaper-root-MuiAccordion-root:first-of-type {
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 0 !important;
+}
+.css-46bh2p-MuiCardContent-root {
+  padding: 0px !important;
 }
